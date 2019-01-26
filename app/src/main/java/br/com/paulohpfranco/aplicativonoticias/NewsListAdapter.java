@@ -29,6 +29,15 @@ public class NewsListAdapter extends ArrayAdapter<News> {
         TextView textViewTitle = listItemView.findViewById(R.id.newsTitle);
         textViewTitle.setText(currentNews.getNewsTitle());
 
+        // Find the TextView in the earthquake_list_item.xml layout with the ID newsAuthor.
+        TextView textViewAuthor = listItemView.findViewById(R.id.newsAuthor);
+
+        if(currentNews.getmNewsAuthor() != null) {
+            textViewAuthor.setText(currentNews.getmNewsAuthor());
+        } else {
+            textViewAuthor.setVisibility(View.GONE);
+        }
+
         // Find the TextView in the earthquake_list_item.xml layout with the ID newsSection.
         TextView textViewSection = listItemView.findViewById(R.id.newsSection);
         textViewSection.setText(currentNews.getNewsSectionName());

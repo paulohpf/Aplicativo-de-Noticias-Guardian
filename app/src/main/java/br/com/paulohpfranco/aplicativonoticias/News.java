@@ -13,11 +13,13 @@ public class News {
     private String mNewsTitle;
     private String mNewsSectionName;
     private String mNewsDate;
+    private String mNewsAuthor;
     private String mNewsURL;
 
-    public News(String newsTitle, String newsSectionName, String newsDate, String newsURL) {
+    public News(String newsTitle, String newsSectionName, String newsDate, String newsAuthor, String newsURL) {
         mNewsTitle = newsTitle;
         mNewsSectionName = newsSectionName;
+        mNewsAuthor = newsAuthor;
         mNewsURL = newsURL;
 
         try {
@@ -41,6 +43,8 @@ public class News {
     public String getmNewsDate() {
         return mNewsDate;
     }
+
+    public String getmNewsAuthor() { return mNewsAuthor; }
 
     public String getNewsURL() {
         return mNewsURL;

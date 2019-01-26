@@ -8,11 +8,6 @@ import java.util.ArrayList;
 public class NewsLoader extends AsyncTaskLoader<ArrayList<News>> {
 
     /**
-     * Tag para mensagens de log
-     */
-    private static final String LOG_TAG = NewsLoader.class.getName();
-
-    /**
      * URL da busca
      */
     private String mUrl;

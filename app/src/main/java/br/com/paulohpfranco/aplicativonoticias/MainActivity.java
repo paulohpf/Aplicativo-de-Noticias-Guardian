@@ -18,8 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<News>> {
 
-    private static final String GUARGIAN_REQUEST_URL = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test";
-    public static final String LOG_TAG = MainActivity.class.getSimpleName();
+    private static final String GUARGIAN_REQUEST_URL = "https://content.guardianapis.com/search?q=debate&tag=politics/politics&from-date=2014-01-01&api-key=test&show-tags=contributor";
     private TextView mEmptyStateTextView;
 
     private static final int NEWSAPP_LOADER_ID = 1;
@@ -92,6 +91,5 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 startActivity(websiteIntent);
             }
         });
-
     }
 }

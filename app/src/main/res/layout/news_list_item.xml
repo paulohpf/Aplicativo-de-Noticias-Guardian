@@ -30,6 +30,15 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/newsAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/secondary_text_light"
+            android:textSize="14sp" />
+
+        <TextView
             android:id="@+id/newsSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

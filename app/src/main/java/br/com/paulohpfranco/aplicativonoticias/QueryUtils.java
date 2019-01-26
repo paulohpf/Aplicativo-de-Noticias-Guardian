@@ -132,8 +132,15 @@ public class QueryUtils {
                 String newsSectionName = singleNew.getString("sectionName");
                 String newsDate = singleNew.getString("webPublicationDate");
                 String newsURL = singleNew.getString("webUrl");
+                String author = null;
 
-                news.add(new News(newsTitle, newsSectionName, newsDate, newsURL));
+                Log.v(LOG_TAG, String.valueOf(singleNew.getJSONArray("tags").length()));
+
+                if(singleNew.getJSONArray("tags").length() > 0){
+                    author = singleNew.getJSONArray("tags").getJSONObject(0).getString("webTitle");
+                }
+
+                news.add(new News(newsTitle, newsSectionName, newsDate, author, newsURL));
             }
             return news;
         } catch (JSONException e) {
