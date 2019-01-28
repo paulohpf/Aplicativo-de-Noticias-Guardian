@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<News>> {
-    
+
     private static final String GUARGIAN_REQUEST_URL = "https://content.guardianapis.com/${query}?show-tags=contributor&api-key=test";
     private TextView mEmptyStateTextView;
 
