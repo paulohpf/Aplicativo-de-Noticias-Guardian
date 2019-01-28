@@ -130,7 +130,7 @@ public class QueryUtils {
                 JSONObject singleNew = results.getJSONObject(i);
                 String newsTitle = singleNew.getString("webTitle");
                 String newsSectionName = singleNew.getString("sectionName");
-                String newsDate = singleNew.getString("webPublicationDate");
+                String newsDate = singleNew.optString("webPublicationDate");
                 String newsURL = singleNew.getString("webUrl");
                 String author = null;
 

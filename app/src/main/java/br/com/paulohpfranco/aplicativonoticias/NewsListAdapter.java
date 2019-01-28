@@ -44,7 +44,12 @@ public class NewsListAdapter extends ArrayAdapter<News> {
 
         // Find the TextView in the earthquake_list_item.xml layout with the ID newsSection.
         TextView textViewDate = listItemView.findViewById(R.id.newsDate);
-        textViewDate.setText(currentNews.getmNewsDate());
+
+        if(currentNews.getmNewsDate() != null) {
+            textViewDate.setText(currentNews.getmNewsDate());
+        } else {
+            textViewDate.setVisibility(View.GONE);
+        }
 
         return listItemView;
     }
