@@ -3,4 +3,41 @@
 
     <string name="no_news">Nenhuma notícia foi encontrada, por favor feche e abra o aplicativo novamente.</string>
     <string name="no_internet_connection">Não foi há conexão com a internet, por favor verifique se o dispositivo não está no modo avião.</string>
+
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+    <!-- Strings For Section Preference [CHAR LIMIT=30] -->
+    <string name="settings_section_label">Exibir sessão</string>
+    <string name="settings_section_key" translatable="false">section</string>
+    <string name="settings_section_default" translatable="false">@string/settings_section_all_value</string>
+
+    <!-- Label for section All option [CHAR LIMIT=20] -->
+    <string name="settings_section_all_label">All</string>
+    <string name="settings_section_all_value" translatable="false">search</string>
+
+    <!-- Label for section Business option [CHAR LIMIT=20] -->
+    <string name="settings_section_business_label">Business</string>
+    <string name="settings_section_business_value" translatable="false">business</string>
+
+    <!-- Label for section Culture option [CHAR LIMIT=20] -->
+    <string name="settings_section_culture_label">Culture</string>
+    <string name="settings_section_culture_value" translatable="false">culture</string>
+
+    <!-- Label for section Education option [CHAR LIMIT=20] -->
+    <string name="settings_section_education_label">Education</string>
+    <string name="settings_section_education_value" translatable="false">education</string>
+
+    <!-- Label for section Food option [CHAR LIMIT=20] -->
+    <string name="settings_section_food_label">Food</string>
+    <string name="settings_section_food_value" translatable="false">food</string>
+
+    <!-- Label for section Games option [CHAR LIMIT=20] -->
+    <string name="settings_section_games_label">Games</string>
+    <string name="settings_section_games_value" translatable="false">games</string>
+
+    <!-- Label for section Info option [CHAR LIMIT=20] -->
+    <string name="settings_section_info_label">Info</string>
+    <string name="settings_section_info_value" translatable="false">info</string>
+
 </resources>
