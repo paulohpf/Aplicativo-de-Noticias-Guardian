@@ -134,8 +134,6 @@ public class QueryUtils {
                 String newsURL = singleNew.getString("webUrl");
                 String author = null;
 
-                Log.v(LOG_TAG, String.valueOf(singleNew.getJSONArray("tags").length()));
-
                 if(singleNew.getJSONArray("tags").length() > 0){
                     author = singleNew.getJSONArray("tags").getJSONObject(0).getString("webTitle");
                 }

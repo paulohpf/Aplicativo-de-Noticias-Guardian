@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<News>> {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<News>>, SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String GUARGIAN_REQUEST_URL = "https://content.guardianapis.com/${query}?show-tags=contributor&api-key=test";
     private TextView mEmptyStateTextView;
@@ -76,12 +76,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
+        //Registro o Listener para escutar as alterações nas Preferencias
+        sharedPrefs.registerOnSharedPreferenceChangeListener(this);
+
         // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
         String sectionSearch = sharedPrefs.getString(
                 getString(R.string.settings_section_key),
                 getString(R.string.settings_section_default));
-
-        Log.v(MainActivity.class.getSimpleName(), "URL:"+GUARGIAN_REQUEST_URL.replace("${query}", sectionSearch));
 
         return new NewsLoader(this, GUARGIAN_REQUEST_URL.replace("${query}", sectionSearch));
     }
@@ -102,6 +103,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoaderReset(Loader<ArrayList<News>> loader) {
 
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (key.equals(getString(R.string.settings_section_key))) {
+            LoaderManager loaderManager = getLoaderManager();
+            loaderManager.restartLoader(NEWSAPP_LOADER_ID, null, this);
+        }
     }
 
     private void updateUi(ArrayList<News> news) {
